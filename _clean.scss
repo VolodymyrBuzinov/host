@@ -1,0 +1,157 @@
+.clean {
+     padding-top: 60px;
+     padding-bottom: 10px;
+  
+  &Container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &Title,
+  &About {
+    @extend %text-throw;
+    padding-left: 15px;
+    padding-right: 15px;
+     margin-bottom: 0;
+  }
+  &Title {
+    line-height: 1.2;
+    padding-bottom: 40px;
+  }
+  &About {
+    max-width: 400px;
+  }
+  &Info {
+     display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 52px;
+  }
+  &ImgContainer {
+    position: relative;
+    overflow: hidden;
+     display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 100%;
+    
+  }
+  &List {
+    @extend %list-throw;   
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      background-color: $main-color;
+      width: 30%;
+      height: 650px;
+      border-radius: 8px;
+      transition: 0.5s ease-in-out;
+  }
+  &ListItem {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    font-size: 44px;
+    
+  }
+  &Link {
+    @extend %link-throw;
+    display: flex;
+    align-items: center;
+    color: $white-color;
+    line-height: 1.2;
+    transition: $animation-timing;
+font-size: 44px;
+   
+  }
+
+  &Link::before {
+    content: '\2192';
+      width: 50px;
+      height: 50px;
+      color: $white-color;
+      transform: translateX(-250%);
+      transition: $animation-timing;
+  }
+  &Input:focus + .cleanLink::before {
+    transform: translateX(0);
+      margin-right: 20px;
+  }
+  &Input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
+.cleanListText {
+  position: absolute;
+    top: 35px;
+    left: 53px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+    color: $white-color;
+}
+
+.plusInner {
+  border-radius: 40px;
+  background-color: $main-color;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plusIcon {
+  fill: $white-color;
+
+  width: 14px;
+    height: 14px;
+}
+.mainImgContainer {
+    position: relative;
+    width: 70%;
+    height: 100%;
+ 
+}
+.plusDescr {
+  position: absolute;
+  pointer-events: none;
+  background-color: $white-color;
+  border-radius: 2px;
+  @extend %text-throw;
+  font-weight: 500;
+  line-height: 1.3;
+  color: $text-color;
+  transition: $animation-timing;
+ min-width: 190px;
+    top: -35px;
+    right: -120px;
+    padding: 8px 10px;
+    opacity: 0;
+    font-size: 13px;
+}
+.plusInner {
+  transition: $animation-timing;
+}
+
+.imgItem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.itemImage {
+  display: block;
+  width: 100%;
+  height: 650px;
+  object-position: center;
+  object-fit: cover;
+  border-radius: 8px;
+}

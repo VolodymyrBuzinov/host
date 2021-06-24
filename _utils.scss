@@ -1,0 +1,36 @@
+//colors
+$main-color: #5a30f0;
+$text-color: #404040;
+$secondary-text: #636c81;
+$white-color: #ffffff;
+$animation-timing: 0.3s ease-in-out;
+
+body {
+font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+// throws
+%text-throw {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+%link-throw {
+  display: block;
+  text-decoration: none;
+}
+%list-throw {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+%plus-styles {
+  padding: 9.55px;
+  background-color: rgba(90, 48, 240, 0.2);
+  border-radius: 40px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}

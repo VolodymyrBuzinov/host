@@ -1,0 +1,144 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  transition: $animation-timing;
+  z-index: 201;
+  background-color: #ffffff;
+
+  &Container {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;    
+      width: 1280px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    
+  }
+  &LogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &Logo {
+    display: block;
+    margin-right: 15px;
+  }
+  &SwitchContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white-color;
+    padding: 2px;
+    border-radius: 25px;
+    border: 1px solid $text-color;
+  }
+
+  &SwitchInput {
+    display: none;
+  }
+  &SwitchInput:checked + p {
+    background-color: $main-color;
+    color: $white-color;
+  }
+  &SwitchInput + p {
+    @extend %text-throw;
+    color: $text-color;
+    padding: 11px 16px;
+    border-radius: 34px;
+    font-size: 14px;
+    line-height: 1.1;
+    transition: $animation-timing;
+  }
+  &Nav {
+    transition: $animation-timing;
+  
+  }
+  &NavList {
+    @extend %list-throw;    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   
+  }
+  &NavItem {
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+    
+  }
+  &NavLink {
+    @extend %link-throw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: $text-color;
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 500;
+    transition: $animation-timing;
+    &:hover,
+    &:focus {
+      color: $main-color;
+    }
+  }
+}
+
+.headerInfoContainer {
+  @media screen and (max-width: 1279px) {
+    display: none;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & a {
+      text-decoration: none;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: $text-color;
+      font-weight: 500;
+      text-align: center;
+      border-right: 2px solid $text-color;
+      padding-right: 15px;
+      transition: $animation-timing;
+      &:hover,
+      &:focus {
+        color: $main-color;
+      }
+    }
+    & p {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 15px;
+      margin-right: 38px;
+    }
+  }
+}
+.headerInfoMobileContainer {
+  & a {
+    @extend %link-throw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: $main-color;
+    text-align: center;
+    border-bottom: 2px solid $main-color;
+  }
+
+  & p {
+    @extend %text-throw;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: $secondary-text;
+    border-bottom: 2px solid $secondary-text;
+  }
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+}
